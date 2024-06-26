@@ -1,0 +1,131 @@
+/*
+// Reglas para CSS
+1. Posicionamiento
+2. Modelo de caja (box model)
+3. Tipografia
+4. Visuales 'efecto visuales como el hover'
+5. Otras / Miselaneos
+*/
+
+
+/* varialble para colores */
+:root {
+    --dark: #1A2130;
+    --text: #FDFFE2;
+    --link: #83B4FF;
+    --scream: #5A72A0;
+}
+
+@font-face {
+    font-family: 'DM Mono', monospace;
+    src: url(../fonts/DM_Mono/DMMono-Regular.ttf);
+    src: url(../fonts/DM_Mono/DMMono-Medium.ttf);
+    src: url(../fonts/DM_Mono/DMMono-MediumItalic.ttf);
+    src: url(../fonts/DM_Mono/DMMono-Light.ttf);
+    src: url(../fonts/DM_Mono/DMMono-LightItalic.ttf);
+    src: url(../fonts/DM_Mono/DMMono-Italic.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'DM Mono', monospace;
+    font-size: 62.5%; /* 1rem = 10px*/
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    min-height: 100dvh;
+    font-size: 1.6rem; /* = 16px por defexto en html*/
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+p {
+    text-wrap: pretty;
+    color: var(--text);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-wrap: balance;
+    color: var(--text);
+}
+
+img,
+video,
+svg {
+    height: auto;
+    max-width: 100%;
+}
+
+.container {
+    max-width: 768px;
+    margin: auto;
+}
+
+.container__nav {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+
+    display: flex;
+    justify-content:space;
+    
+    background-color: var(--dark);
+    a {
+        width: 20%;
+        display: grid;
+        place-items: center;
+        font-size: 24px;
+    }
+}
+
+.main-home {
+    width: 100%;
+    height: calc(100dvh - 60px);
+    padding-bottom: 12px;
+
+    background-color: var(--scream);
+
+    overflow: scroll;
+    scrollbar-width: none;
+
+    .main__header {
+        padding: 1rem 0;
+        display: grid;
+        place-items: center;
+        
+    }
+
+    .main__section {
+
+        .section__article {
+            width: 100%;
+            padding: 0 0.8rem;
+
+            display: grid;
+            gap: 1rem;
+        }
+    }
+}
