@@ -10,16 +10,16 @@
 
 /* varialble para colores */
 :root {
-    --primary-100: #FF6B6B;
-    --primary-200: #dd4d51;
-    --primary-300: #8f001a;
-    --accent-100: #00FFFF;
-    --accent-200: #00999b;
-    --text-100: #FFFFFF;
-    --text-200: #e0e0e0;
-    --bg-100: #0F0F0F;
-    --bg-200: #1f1f1f;
-    --bg-300: #353535;
+    --primary-100:#FF7F50;
+    --primary-200:#dd6236;
+    --primary-300:#8f1e00;
+    --accent-100:#8B4513;
+    --accent-200:#ffd299;
+    --text-100:#000000;
+    --text-200:#2c2c2c;
+    --bg-100:#F7EEDD;
+    --bg-200:#ede4d3;
+    --bg-300:#c4bcab;
 }
 
 @font-face {
@@ -55,7 +55,7 @@ body {
     min-height: 100dvh;
     font-size: 1.6rem;
     /* = 16px por defexto en html*/
-    background-color: var(--bg-100);
+    background-color: var(--bg-100);   
 }
 
 input,
@@ -67,9 +67,8 @@ select {
 
 p {
     text-wrap: pretty;
-    color: var(--text-200);
     font-size: 1.6rem;
-    line-height: 1.2em;
+    color: var(--text-200);
 }
 
 h1,
@@ -79,7 +78,7 @@ h4,
 h5,
 h6 {
     text-wrap: balance;
-
+    color: var(--text-100);
 }
 
 img,
@@ -90,19 +89,21 @@ svg {
 }
 
 .container {
-    max-width: 76.8rem;
-    min-width: 36rem;
-    margin: auto;
+    max-width: 768px;
+    margin: 0 auto;
 }
 
-.container__nav {
+.nav__container {
     position: fixed;
     bottom: 0;
     width: 100%;
+    min-width: 36rem;
     height: 6rem;
 
     display: flex;
     justify-content: space-between;
+
+    background-color: var(--text-100);
 
     a {
         width: 20%;
@@ -112,156 +113,52 @@ svg {
     }
 }
 
-.main-home {
+.main__home {
     width: 100%;
+    min-width: 36rem;
     height: calc(100dvh - 6rem);
-
     overflow: scroll;
     scrollbar-width: none;
 
-    .main__header {
-        position: sticky;
-        top: 0;
+    .main__hader {
+        width: 100%;
+        height: auto;
         padding: 1.2rem 0;
-        display: grid;
-        place-items: center;
-        background-color: var(--primary-100);
+        text-align: center;
 
-        h1 {
-            color: var(--primary-300);
-        }
+        background-color: var(--bg-200);    
     }
-
+    
     .main__section {
+        width: 100%;
+        display: grid;
+        gap: 1.2rem;
+        padding-bottom: 1.2rem;
 
-        .section__article {
-            width: 100%;
-            padding: 1.2rem 0.8rem;
-
+        .article {
             display: grid;
             gap: 1.2rem;
 
-            background-color: var(--bg-300);
-
-            h2 {
-                color: var(--text-200);
-                line-height: 1.2em;
-
-            }
-
-            article {
-                display: grid;
-                gap: 1.2rem;
-
-                img {
-                    width: 100%;
-                }
-            }
-        }
-    }
-}
-
-.main-lugares {
-    width: 100%;
-    height: calc(100dvh - 6rem);
-
-    overflow: scroll;
-    scrollbar-width: none;
-
-    .main__header {
-        position: sticky;
-        top: 0;
-        padding: 1.2rem 0;
-        display: grid;
-        place-items: center;
-        background-color: var(--primary-100);
-
-        h1 {
-            color: var(--primary-300);
-        }
-    }
-
-    .section__article {
-        width: 100%;
-        padding: 1.2rem 0rem;
-
-        display: grid;
-        gap: 1.2rem;
-
-        background-color: var(--bg-300);
-
-        h2 {
-            color: var(--text-200);
-            line-height: 1.2em;
-            text-align: center;
-        }
-
-        >article {
-            width: 100%;
-            height: auto;
-            display: grid;
-            grid-template-rows: minmax(6rem, auto) auto 100%;
-            background-color: var(--bg-300);
-
-            h3 {
-                display: grid;
-                place-content: center;
-                font-size: 2.2rem;
-                text-align: center;
-
-                background-color: var(--primary-100);
-                color: var(--primary-300);
+            img {
+                min-width: 360px;
             }
 
             div {
-                padding: 1.2rem 0.8rem;
+                display: grid;
+                gap: 1.2rem;
+                padding: 0 1.2rem;
             }
-
-            img {
-                width: 100%;
-            }
-
         }
     }
 }
 
-
-.main-artesania {
-    width: 100%;
-    height: calc(100dvh - 6rem);
-
-    overflow: scroll;
-    scrollbar-width: none;
-
-    .main__header {
-        position: sticky;
-        top: 0;
-        padding: 1.2rem 0;
-        display: grid;
-        place-items: center;
-        background-color: var(--primary-100);
-
-        h1 {
-            color: var(--primary-300);
-        }
+@media (width > 834px) { /*tablet up*/
+    .container {
+        max-width: 1024px;
+        margin: 0 auto;
     }
 
-    .main__section {
-        height: 100%;
-        background-color: var(--bg-300);
-
-        .section__article {
-            width: 100%;
-            height: auto;
-            display: grid;
-            gap: 1.2rem;
-            padding: 1.2rem 0.8rem;
-        }
-
-        h2 {
-            color: var(--text-200);
-            text-align: center;
-        }
+    .article {
+        grid-template-columns: 50% 50%;
     }
-
 }
