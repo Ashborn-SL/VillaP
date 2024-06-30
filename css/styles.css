@@ -126,7 +126,10 @@ svg {
         padding: 1.2rem 0;
         text-align: center;
 
-        background-color: var(--bg-200);    
+        background-color: var(--bg-300);
+         h1 {
+            font-style: italic;
+         }
     }
     
     .main__section {
@@ -159,6 +162,13 @@ svg {
     }
 
     .article {
-        grid-template-columns: 50% 50%;
+        width: 100%;
+        grid-template-columns: 1fr 1fr;
+        background-color: var(--bg-200);
+        
+
+        div {
+            grid-auto-rows: min-content;
+        }
     }
 }
